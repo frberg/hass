@@ -1,0 +1,27 @@
+- cal_id: damveien6@gmail.com
+  entities:
+  - device_id: damveien6gmailcom
+    ignore_availability: true
+    name: damveien6@gmail.com
+    track: true
+
+- cal_id: '#contacts@group.v.calendar.google.com'
+  entities:
+  - device_id: contacts
+    ignore_availability: true
+    name: Contacts
+    track: false
+
+- cal_id: no.norwegian#holiday@group.v.calendar.google.com
+  entities:
+  - device_id: helligdager_i_norge
+    ignore_availability: true
+    name: Helligdager i Norge
+    track: true
+
+- cal_id: e_2_no#weeknum@group.v.calendar.google.com
+  entities:
+  - device_id: week_numbers
+    ignore_availability: true
+    name: Week Numbers
+    track: false
