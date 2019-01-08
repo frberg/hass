@@ -1,0 +1,122 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret zone_Home_lat
+  longitude: !secret zone_Home_lon
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 50
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Oslo
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+# introduction:
+
+# Enables the frontend
+frontend:
+  themes: !include themes.yaml
+
+panel_iframe:
+  home:
+    title: Hjem
+    icon: mdi:home
+    url: http://nichar-iot:8123/lovelace/default_view
+
+ 
+  
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+
+hue:
+  bridges:
+    - host: 192.168.99.137
+      allow_hue_groups: True
+
+
+# -- Klima Kontroll Mill WifiWallplugg
+climate:
+  - platform: mill
+    username: fredrik.skaiaa.berg@gmail.com
+    password: !secret mill_pwd
+
+# -- Google Calender for aytomasjon for når jentene ikke er hjemme
+google:
+  client_id: !secret google_id
+  client_secret: !secret google_secret
+
+
+zwave:
+  usb_path: /dev/ttyACM0
+
+  # Text to speech
+
+tts:
+  - platform: google
+
+device_tracker:
+  - platform: bluetooth_tracker
+    interval_seconds: 15
+    consider_home: 150
+    track_new_devices: no
+  - platform: luci
+    host: 192.168.99.1
+    username: root
+    password: !secret luci_pwd
+    track_new_devices: no
+  - platform: nmap_tracker
+    hosts: 192.168.99.0/24
+    # Intervall er i minutter
+    home_interval: 10
+    exclude:
+     - 192.168.99.1
+     - 192.168.99.221
+    track_new_devices: no
+    
+#Input_boolean:
+#  node_red:
+#    name: "Node-Red Watchdog"
+#      initial: on
+    
+# Cloud
+#cloud:
+
+group: !include groups.yaml
+automation: !include_dir_merge_list automations
+script: !include scripts.yaml
+sensor: !include sensor.yaml
