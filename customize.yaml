@@ -1,0 +1,42 @@
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
+  friendly_name: Stue  Wallplugg ON/OFF
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2:
+  friendly_name: Ninni Wallplugg ON/OFF
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
+  friendly_name: Stue Wallplugg
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2:
+  friendly_name: Ninni Wallplugg
+sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
+  friendly_name: Stue Temperatur
+sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
+  friendly_name: Stue Lux
+sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
+  friendly_name: Stue Innbruddsensor
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power:
+  friendly_name: Stue Wallplugg Watt
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+  friendly_name: Ninni Wallplugg Watt
+sensor.installed_version:
+  friendly_name: hass versjon
+sensor.last_boot:
+  friendly_name: Boot
+sensor.load_1m:
+  friendly_name: 1min load
+sensor.load_5m:
+  friendly_name: 5min load
+sensor.load_15m:
+  friendly_name: 15 min load
+sensor.memory_use_percent:
+  friendly_name: minnebruk
+sensor.network_in_eth0:
+  friendly_name: Nett inn
+sensor.network_out_eth0:
+  friendly_name: nett ut
+sensor.processor_use:
+  friendly_name: Proc Use
+sensor.disk_use_percent_home:
+  friendly_name: Disk usage
+sensor.cpu_temperature:
+  friendly_name: CPU Temp
+device_tracker.lollo:
+  icon: /www/lollo.png
