@@ -1,0 +1,26 @@
+- alias: 'Welcome Home Commander'
+  trigger:
+    - platform: state
+      entity_id: device_tracker.frberg
+      from: 'not_home'
+      to: 'home'
+  condition: and
+  conditions:
+    condition: state
+    entity_id: device_tracker.ninni
+    state: 'not_home'
+    condition:
+    entity_id: device_tracker.lollo
+    state: 'not_home'
+# I owe https://github.com/Danielhiversen/home-assistant_config/blob/master/automation/soverom.yaml a coffe
+  action:
+  - service: media_player.turn_on
+    entity_id: media_player.stue3
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.stue3
+      volume_level: 0.55
+  - service: tts.google_say
+    entity_id: media_player.stue3
+    data_template:
+      message: ' Welcome Home Commander'
