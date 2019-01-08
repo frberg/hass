@@ -1,0 +1,125 @@
+##################################################
+#
+#   FSB 2019-01-02
+#
+#
+##################################################
+default_view:
+  icon: mdi:home
+  name: Start
+#  hidden: false                    # FSB 2019-01-02 Denne funker muligens ikke i HASSIO
+  entities:
+    - group.all_switches
+    - group.systemmon
+    - group.time_date
+  view: true
+
+
+#############################################################
+#       Soverom Ninni
+#
+#
+##############################################################    
+'Soverom Ninni':
+  entities:
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2
+    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2
+    - light.ninnis_rom_taklampe
+    - climate.ninniovn
+    - device_tracker.ninni
+  icon: 'mdi:human-female'
+  name: 'Ninnis Rom'
+  view: true
+    
+    
+    
+#############################################################
+#       Soverom Charlie
+#
+#
+#############################################################
+'Soverom Charlie':
+#  climate: null
+  entities:
+    - climate.charlieovn
+    - device_tracker.lollo
+    - light.hue_charlie_taklampe
+  icon: 'mdi:human-female'
+  name: 'Charlies Rom'
+  view: true
+    
+#############################################################
+#       Soverom Fredrik
+#
+#
+##############################################################
+'Soverom Fredrik':
+  entities:
+  - media_player.soverom_fsb
+  - device_tracker.frberg
+  name: 'frbergs rom'
+  icon: 'mdi:human-male'
+  view: true
+#############################################################
+#        Stue
+#
+#
+##############################################################
+Stue:
+  entities:
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+    - media_player.stue3
+    - device_tracker.surface
+    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+    - light.rom_stue
+    - light.hue_white_lamp_1
+  icon: 'mdi:sofa'
+  name: Stue
+  view: true
+#############################################################
+#       Soverom Kule Mennesker
+#
+#
+##############################################################
+awesome_people:
+  entities:
+    - group.awesome_people
+  name: 'Kule Mennesker'
+  view: true
+  
+  
+###########################################################
+#
+#      Statistikk
+#
+#
+###########################################################
+  
+
+  
+  
+###########################################################
+#
+#      Grupper som legges til entities   
+#
+#
+###########################################################
+
+systemmon:
+  - sensor.installed_version
+  - sensor.last_boot
+  - sensor.load_1m
+  - sensor.load_5m
+  - sensor.load_15m
+  - sensor.memory_use_percent
+  - sensor.network_in_eth0
+  - sensor.network_out_eth0
+  - sensor.processor_use
+  - sensor.disk_use_percent_home
+  - sensor.cpu_temperature
+
+
+ 
